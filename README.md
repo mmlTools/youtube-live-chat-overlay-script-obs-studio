@@ -1,6 +1,6 @@
 # 🎬 OBS YouTube Chat Overlay (Lua Script)
 
-> A lightweight **OBS Studio Lua script** that automatically embeds your **YouTube Live Chat** as a clean, customizable Browser Source — no third-party overlays needed.
+> A lightweight **OBS Studio Lua script** that automatically embeds your **YouTube Live Chat** as a clean, customizable Browser Source no third-party websites or applications needed.
 
 ---
 
@@ -13,7 +13,7 @@
 ✅ Option to **hide scrollbars** or lock scrolling entirely  
 ✅ **Custom CSS** field to restyle chat freely  
 ✅ **Cache-buster refresh** so CSS updates apply instantly  
-✅ No external dependencies — pure Lua, works inside OBS
+✅ No external dependencies pure Lua, works inside OBS
 
 ---
 
@@ -58,7 +58,7 @@ The script automatically creates (or updates) a Browser Source called
 
 ### 5. Done 🎉
 
-Your live YouTube chat now appears directly in OBS — perfectly styled for your stream.
+Your live YouTube chat now appears directly in OBS perfectly styled for your stream.
 
 ---
 
@@ -142,13 +142,13 @@ Part of the open-source ecosystem around streaming tools like **[OBSWeather](htt
 
 ### 🧾 License
 
-MIT License © 2025 — You are free to modify and share as long as attribution is preserved.
+MIT License © 2025 You are free to modify and share as long as attribution is preserved.
 
 ---
 
 ### 📎 Related Projects
 
-- ☕ **Ko‑fi** — Support development: **[ko-fi](https://ko-fi.com/mmltech)**
+- ☕ **Ko‑fi** Support development: **[ko-fi](https://ko-fi.com/mmltech)**
 
 - 🌦 [OBS Weather Plugin](https://obsweather.com) - Live weather overlays for OBS
 - ⏱ [OBS Countdown Widget](https://obscountdown.com) - Beautiful countdowns for streams
