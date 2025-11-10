@@ -107,7 +107,6 @@ You can easily override or extend these styles via the **Custom CSS** field.
 
 ## 📸 Preview
 
-_(Add your own screenshot of the chat overlay here)_  
 Example with transparent background and scrollbars hidden:
 
 ![YouTube Chat Overlay in OBS](assets/preview.png)
