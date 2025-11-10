@@ -8,13 +8,7 @@ local hide_header      = true
 local hide_scrollbar   = true
 local lock_no_scroll   = false
 local custom_css       = [[
-/* Base: transparent canvas, minimal chrome */
-html, body { background: transparent !important; }
-
-/* Hide header/UI chrome */
-yt-live-chat-header-renderer,
-#header, #panel-pages,
-yt-live-chat-message-input-renderer { display: none !important; }
+/* Add your own custom rules if I missed anything */
 ]]
 
 local cache_tick = 0
@@ -29,7 +23,7 @@ local function compose_css()
     local css = custom_css or ""
 
     if transparent and not css:match("background:%s*transparent") then
-        css = 'html, body { background: transparent !important; }\n' .. css
+        css = '* { background: transparent !important; }\n' .. css
     end
 
     if hide_header then
@@ -113,8 +107,6 @@ local function refresh_source()
     cache_tick = cache_tick + 1
     ensure_browser_source()
 end
-
--- ========== OBS Script API ==========
 
 function script_description()
     return [[Creates/updates a Browser Source that shows YouTube Live pop-out chat.
