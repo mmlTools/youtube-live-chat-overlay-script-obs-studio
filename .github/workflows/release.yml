@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "src/Youtube Live Stats.lua"
+      - "src/Youtube Live Chat Overlay.lua"
   workflow_dispatch:
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
 
       - name: Zip Lua
         env:
-          LUA: "src/Youtube Live Stats.lua"
+          LUA: "src/Youtube Live Chat Overlay.lua"
           TAG: ${{ steps.tag.outputs.TAG }}
         run: |
           set -euo pipefail
@@ -36,7 +36,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.tag.outputs.TAG }}
-          name: "YouTube Live Stats ${{ steps.tag.outputs.TAG }}"
+          name: "Youtube Live Chat Overlay ${{ steps.tag.outputs.TAG }}"
           draft: false
           prerelease: false
           generate_release_notes: true
