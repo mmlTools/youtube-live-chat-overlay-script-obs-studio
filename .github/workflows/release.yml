@@ -1,0 +1,44 @@
+name: Release YouTube Live Chat Overlay
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/Youtube Live Stats.lua"
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compute tag
+        id: tag
+        run: echo "TAG=v$(date +'%Y.%m.%d')-${GITHUB_RUN_NUMBER}" >> "$GITHUB_OUTPUT"
+
+      - name: Zip Lua
+        env:
+          LUA: "src/Youtube Live Stats.lua"
+          TAG: ${{ steps.tag.outputs.TAG }}
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          cp "$LUA" dist/
+          (cd dist && zip -9 "Youtube Live Chat Overlay-${TAG}.zip" "$(basename "$LUA")")
+          ls -lah dist
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.TAG }}
+          name: "YouTube Live Stats ${{ steps.tag.outputs.TAG }}"
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: |
+            dist/Youtube Live Chat Overlay-${{ steps.tag.outputs.TAG }}.zip
