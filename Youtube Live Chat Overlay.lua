@@ -8,7 +8,7 @@ local hide_header      = true
 local hide_scrollbar   = true
 local lock_no_scroll   = false
 local custom_css       = [[
-/* Add your own custom rules if I missed anything */
+/* Add your own custom rules if I missed anything here */
 ]]
 
 local cache_tick = 0
